@@ -7,5 +7,10 @@
 </main>
 
 <style>
-
+    main{
+        color:black;
+    }
+h1{
+    color:black;
+}
 </style>
