@@ -1,5 +1,11 @@
-<script></script>
+<script>
 
-<main></main>
+</script>
 
-<style></style>
+<main>
+<h1>main fedd</h1>
+</main>
+
+<style>
+
+</style>
