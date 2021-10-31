@@ -1,12 +1,15 @@
 <script>
-    import {createEventDispatcher} from "svelte";
+    import {feedbackStore} from "../stores";
     export let item;
     import Card from "./Card.svelte";
-    const dispatch = createEventDispatcher();
 
     const handleDelete = (itemId) => {
-        dispatch("delete",itemId)
+        feedbackStore.update((currentTarget)=>{
+            return currentTarget.filter((item)=>item.id != itemId)
+        })
     }
+    
+
 </script>
 
 <main>
@@ -16,18 +19,19 @@
         </div>
         <button class="close" on:click={()=> handleDelete(item.id)}>X</button>
         <div class="item-text">
-            <h6>{item.text}</h6>
+            <h3>{item.text}</h3>
         </div>
     </Card>
 </main>
 
 <style>
+   
 .num-display{
     background:#ff6a95;
     width:35px;
     height:35px;
     border-radius: 50%;
-    top: -9px;
+    top: -13px;
     left:-1px;
     border:1px solid #eee;
     align-items: center;
